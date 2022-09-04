@@ -71,7 +71,7 @@ const displayNews = newsCategories =>{
         <p class="card-text">${newsCategory.details.length > 300 ? newsCategory.details.slice(0, 300) + '...' : newsCategory.details}</p>
         <div class="d-flex justify-content-between">
           <div class="d-flex flex-start">
-            <img style="width: 0px; border-radius:50%;" src="${newsCategory.author.img ? newsCategory.author.img : 'No Photo Found'}" class="img-fluid" alt="">
+            <img style="width: 70px; border-radius:50%;" src="${newsCategory.author.img ? newsCategory.author.img : 'No Photo Found'}" class="img-fluid" alt="">
             <div class="ps-2 text-muted d-dlex flex-column align-items center">
               <p><small>Name: ${newsCategory.author?.name ? newsCategory.author?.name : 'No Name Found'}</small></p>
               <p><small class="text-wrap">
@@ -90,7 +90,7 @@ const displayNews = newsCategories =>{
             <p>${newsCategory.rating.number ? newsCategory.rating.number : 'Not Rated Yet'}<i class="bi bi-star-fill"></i></p>
           </div>
           <div>
-            <button type="button" class="btn btn-primary text-white" data-bs-toggle="moadal" data-bs-target="#exampleModal" onclick="loadDetails('${newsCategory._id}')">
+            <button type="button" class="btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#newsDetailsModal" onclick="loadNewsDetails('${newsCategory._id}')">
             <i class="bi bi-arrow-right"></i>
             </button>
           </div>
@@ -103,7 +103,7 @@ const displayNews = newsCategories =>{
   })
   toggleSpinner(false);
 }
-
+// Add Toggle Spinner
 const toggleSpinner = isLoading => {
   const spinner = document.getElementById('spinner-loader');
   if(isLoading){
@@ -112,6 +112,18 @@ const toggleSpinner = isLoading => {
   else{
     spinner.classList.add('d-none');
   }
+}
+// Load News Details
+const loadNewsDetails = (news_id) =>{
+  const url = `https://openapi.programming-hero.com/api/news/${news_id}`
+  fetch(url)
+   .then(res => res.json())
+   .then(data => console.log(data.data))
+   .catch(err => displayNewsDetails(err))
+}
+const displayNewsDetails = details =>{
+  console.log(details);
+  
 }
 
 categoryLoader();
