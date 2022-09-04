@@ -70,25 +70,28 @@ const displayNews = newsCategories =>{
         <p class="card-text">${newsCategory.details.length > 300 ? newsCategory.details.slice(0, 300) + '...' : newsCategory.details}</p>
         <div class="d-flex justify-content-between">
           <div class="d-flex flex-start">
-            <img src="" class="img-fluid" alt="">
-            <p class="d-flex flex-column">
-              <span>Jane Cooper</span>
-              <span>Jan 10, 2022</span>
-            </p>
+            <img style="width: 0px; border-radius:50%;" src="${newsCategory.author.img ? newsCategory.author.img : 'No Photo Found'}" class="img-fluid" alt="">
+            <div class="ps-2 text-muted d-dlex flex-column align-items center">
+              <p><small>Name: ${newsCategory.author?.name ? newsCategory.author?.name : 'No Name Found'}</small></p>
+              <p><small class="text-wrap">
+              ${newsCategory.author?.published_date ? newsCategory.author?.published_date : 'No Date Found'}
+              </small></p>
+            </div>
           </div>
           <div>
-            <span><i class="bi bi-eye"></i></span>
-            <span class="fw-bold">1.5 M</span>
+            <div>
+              <p><i class="bi bi-eye"></i>
+              ${newsCategory.total_view ? newsCategory.total_view : 'No Data Found'}
+              </p>
+            </div>
           </div>
           <div>
-            <span><i class="bi bi-star-half"></i></span>
-            <span><i class="bi bi-star"></i></span>
-            <span><i class="bi bi-star"></i></span>
-            <span><i class="bi bi-star"></i></span>
-            <span><i class="bi bi-star"></i></span>
+            <p>${newsCategory.rating.number ? newsCategory.rating.number : 'Not Rated Yet'}<i class="bi bi-star-fill"></i></p>
           </div>
           <div>
-            <span class="fs-3 fw-bold"><i class="bi bi-arrow-right"></i></span>
+            <button type="button" class="btn btn-primary text-white" data-bs-toggle="moadal" data-bs-target="#exampleModal" onclick="loadDetails('${newsCategory._id}')">
+            <i class="bi bi-arrow-right"></i>
+            </button>
           </div>
         </div>
       </div>
