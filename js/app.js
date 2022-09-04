@@ -118,12 +118,32 @@ const loadNewsDetails = (news_id) =>{
   const url = `https://openapi.programming-hero.com/api/news/${news_id}`
   fetch(url)
    .then(res => res.json())
-   .then(data => console.log(data.data))
-   .catch(err => displayNewsDetails(err))
+   .then(data => displayNewsDetails(data.data))
+   .catch(err => console.log(err))
 }
 const displayNewsDetails = details =>{
   console.log(details);
-  
+  const modalContainer = document.getElementById('modal-container');
+  const modalTitle = document.getElementById('modal-title');
+  modalTitle.innerText = `${details[0].title}`;
+  modalContainer.innerHTML = `
+        <div class="text-center">
+        <p>Author: ${details[0].author.name ? details[0].author.name : 'No Name Found'}</p>
+        <img style="width: 50px;" src="${details[0].author?.img ? details[0].author.img : 'No Image Found'}" alt="">
+        <p>Publish Date: ${details[0].author.published_date ? details[0].author.published_date : 'No Date Found'}</p>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <p class="tex-warning">Rating: ${details[0].rating ? details[0].rating.number : 'Not Rated Yet'}</p>
+        <p>Total Views: <i class="bi bi-eye"></i> ${details[0].total_view ? details[0].total_view : 'No View Yet'}</p>
+      </div>
+      
+      <div>
+      <div class="text-center"> <img src="${details[0].thumbnail_url ? details[0].thumbnail_url : 'No Thumbnail Found'}" alt=""></div>
+        <h3>Details:</h3>
+        <p><small>${details[0].details ? details[0].details.slice(0,1000) + '....' : 'Nothing Found'}</small></p>
+      </div>
+  `
 }
 
 categoryLoader();
