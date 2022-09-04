@@ -2,9 +2,9 @@
 const categoryLoader = () => {
   const url = `https://openapi.programming-hero.com/api/news/categories`
   fetch(url)
-  .then(res => res.json())
-  .then(data => displayCategory(data.data.news_category))
-  .catch(err => console.log(err));
+    .then(res => res.json())
+    .then(data => displayCategory(data.data.news_category))
+    .catch(err => console.log(err));
 }
 
 
@@ -27,9 +27,10 @@ const displayCategory = categories => {
 const loadNews = (category_id) =>{
   const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`
   fetch(url)
-  .then(res => res.json())
-  .then(data => displayNews(data.data))
-  .catch(err => console.log(err))
+    .then(res => res.json())
+    .then(data => displayNews(data.data))
+    .catch(err => console.log(err))
+  toggleSpinner(true);
 }
 
 
@@ -100,8 +101,17 @@ const displayNews = newsCategories =>{
     `
     cardContainer.appendChild(newCardDiv);
   })
-
+  toggleSpinner(false);
 }
 
+const toggleSpinner = isLoading => {
+  const spinner = document.getElementById('spinner-loader');
+  if(isLoading){
+    spinner.classList.remove('d-none');
+  }
+  else{
+    spinner.classList.add('d-none');
+  }
+}
 
 categoryLoader();
