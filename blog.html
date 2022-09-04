@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blogs</title>
+    <!-------------------------------
+      ---     Google Fonts    ---
+    -------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+
+    <!-------------------------------
+       ---    Bootstrap CSS   ---
+    -------------------------------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!------------------------------------
+         ---   Bootstrap Icon CDN   ---
+    --------------------------------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+
+    <!-------------------------------
+          ---   Vanilla CSS   ---
+    -------------------------------->
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body class="container fluid">
+
+        <!-- Navbar Starts -->
+        <nav class="navbar bg-light border-bottom">
+          <div class="container-fluid">
+            <a href="index.html" class="navbar-brand text-primary"><span class="bg-primary px-2 py-1 text-white rounded">Daily</span> Briefing</a>
+            <div>
+              <a href="index.html" class="navbar-brand text-primary" style="text-decoration: underline;">Home</a>
+              <a href="/blog.html" class="navbar-brand">Blog</a>
+              <a><img src="images/Avatar.png" alt=""></a>
+            </div>
+          </div>
+        </nav>
+        <!-- Navbar Ends -->
+
+        <mian class="container">
+          <div class="bg-info m-2 p-3 rounded">
+            <p class="fs-5">1. What are the differences between var, let, const <span><i class="bi bi-question-lg"></i></span>
+              </p>
+           <p><span class="fw-bold">Answer:</span> <br>
+            a) <span class="fw-bold">Var</span> variable is functional scope, <span class="fw-bold">Let</span> variable is block scope, <span class="fw-bold">Const</span> variable is block scope <br>
+            b) While <span class="fw-bold">var</span> and <span class="fw-bold">let</span> can be re-declared without being initialized but <span class="fw-bold">const</span> should be initialized during declaration.
+          </p>
+          </div>
+
+          <div class="bg-info m-2 p-3 rounded">
+            <p class="fs-5">2. What are the differences between regular funtion and array function <span><i class="bi bi-question-lg"></i></span>
+              </p>
+           <p><span class="fw-bold">Answer:</span> <br>
+            a) In <span class="fw-bold">regular function</span> arguments keywords can be used to access the arguments of which passed to function. <span class="fw-bold">Arrow function</span> do not have an arguments binding. <br>
+            b) <span class="fw-bold">Regular functions</span> are constructible, they can be called using the new keyword. However, <span class="fw-bold">arrow functions</span> can never be used as constructor functions. Hence, they can never be invoked with the new keyword. <br>
+            c) You can define methods in class using <span class="fw-bold">regular function</span>. In <span class="fw-bold">arrow function</span>, you don’t have to bind with context.
+          </p>
+          </div>
+
+          <div class="bg-info m-2 p-3 rounded">
+            <p class="fs-5">3. What are the differences between Map(), ForEach(), Filter() & Find()  <span><i class="bi bi-question-lg"></i></span>
+              </p>
+           <p><span class="fw-bold">Answer:</span> <br>
+            a)<span class="fw-bold">.forEach()</span>, is used to execute the same code on every element in an array but does not change the array and it returns undefined. <br>
+            b)<span class="fw-bold">.map()</span> executes the same code on every element in an array and returns a new array with the updated elements. <br>
+            c)<span class="fw-bold">.filter()</span> checks every element in an array to see if it meets a certain criteria and returns a new array with the elements that return truthy for the criteria.
+            It executes the same code on every element in an array and returns a new array with the updated elements. <br>
+            d)<span class="fw-bold">.find()</span> checks every element in an array to see if it meets a certain criteria and returns a new array with the first matched element.
+          </p>
+          </div>
+          <div class="bg-info m-2 p-3 rounded">
+            <p class="fs-5">4. Why do we use Template String <span><i class="bi bi-question-lg"></i></span>
+              </p>
+           <p><span class="fw-bold">Answer:</span> <br>
+            <span class="fw-bold">Template literals</span> or <span class="fw-bold">Template Strings</span> are literals delimited with backtick (`) characters, allowing for multi-line strings, for string interpolation with embedded expressions, and for special constructs called tagged templates.
+          </p>
+          </div>
+        </mian>
+
+
+    <!-- Bootstrap Loader -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <!-- JavaScript loader -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

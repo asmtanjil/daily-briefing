@@ -46,13 +46,13 @@ const displayNews = newsCategories =>{
   const newsCount = document.getElementById('news-count')
 
   cardContainer.innerHTML = '';
-  newsCount.textContent = '';
+  newsCount.innerHTML = '';
 
   if(newsCategories.length > 0){
-    newsCount.innerHTML = `${newsCategories.length} News Found`
+    newsCount.value = `${newsCategories.length} News are Found here`
   }
   else{
-    newsCount.innerHTML = `No News Found`
+    newsCount.value = `No News Found`
   }
 
   newsCategories.forEach(newsCategory => {
@@ -137,7 +137,7 @@ const displayNewsDetails = details =>{
         <p class="tex-warning">Rating: ${details[0].rating ? details[0].rating.number : 'Not Rated Yet'}</p>
         <p>Total Views: <i class="bi bi-eye"></i> ${details[0].total_view ? details[0].total_view : 'No View Yet'}</p>
       </div>
-      
+
       <div>
       <div class="text-center"> <img src="${details[0].thumbnail_url ? details[0].thumbnail_url : 'No Thumbnail Found'}" alt=""></div>
         <h3>Details:</h3>

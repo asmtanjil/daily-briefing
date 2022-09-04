@@ -28,13 +28,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   </head>
   <body class="container fluid">
+    <!------------------------------------
+         ---     Header Starts   ---
+    --------------------------------------->
     <!-- Navbar Starts -->
     <nav class="navbar bg-light border-bottom">
       <div class="container-fluid">
         <a href="index.html" class="navbar-brand text-primary"><span class="bg-primary px-2 py-1 text-white rounded">Daily</span> Briefing</a>
         <div>
-          <a class="navbar-brand text-primary" style="text-decoration: underline;">Home</a>
-          <a class="navbar-brand">Blog</a>
+          <a href="index.html" class="navbar-brand text-primary" style="text-decoration: underline;">Home</a>
+          <a href="blog.html" class="navbar-brand">Blog</a>
           <a><img src="images/Avatar.png" alt=""></a>
         </div>
       </div>
@@ -42,7 +45,7 @@
     <!-- Navbar Ends -->
 
 
-<!-- Header Starts -->
+<!-- Menu Starts -->
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container d-flex justify-content-center">
         <a class="navbar-brand" href="#"></a>
@@ -58,26 +61,32 @@
         </div>
       </div>
     </nav>
-
+<!-- Search Bar Starts -->
     <section>
       <div class="mb-3">
         <input id="news-count" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
       </div>
     </section>
+<!-- Search Bar Ends -->
+    <!------------------------------------
+         ---     Header Ends   ---
+    --------------------------------------->
 
-<!-- Header Ends -->
 
 
-<!-- Main Section Starts -->
-
+<!------------------------------------
+    ---     Main Section Starts   ---
+--------------------------------------->
+<!-- Spinner Starts -->
   <div id="spinner-loader" class="d-flex justify-content-center mt-5 d-none">
     <div class="spinner-border mt-5" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
+  <!-- Spinner Ends -->
+
 
   <!-- Modal Starts -->
-
   <div class="modal fade" id="newsDetailsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -94,14 +103,16 @@
       </div>
     </div>
   </div>
-  
-
   <!-- Modal Ends -->
 
+<!-- Card Starts -->
   <section id="card-container" class="container">  
   </section>
+<!-- Card Ends -->
 
-<!-- Main Section Ends -->
+<!------------------------------------
+    ---     Main Section Ends   ---
+--------------------------------------->
 
     <!-- Bootstrap Loader -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
